@@ -1,1 +1,91 @@
-C:/Users/yuhgo/.ideavimrc
+""" setting
+set incsearch
+set ignorecase
+set smartcase
+set number
+set relativenumber
+set clipboard+=unnamedplus
+set keep-english-in-normal
+
+""" map
+let mapleader=" "
+" reload vimrc
+nnoremap <leader><leader> :source ~/.ideavimrc<cr>
+" leave insert
+inoremap jk <esc>
+" save file
+nnoremap <C-s> :update<cr>
+" delete buffer
+noremap <leader>q :bd<cr>
+" highlight off
+nnoremap <leader>; :nohlsearch<cr>
+" yank
+nnoremap Y y$
+" paste
+nnoremap p ]p
+xnoremap p ]p
+" incremental
+nnoremap + <C-a>
+nnoremap - <C-x>
+" window
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
+" join
+nnoremap gJ J
+" cursor
+nnoremap J 5j
+nnoremap K 5k
+xnoremap J 5j
+xnoremap K 5k
+nnoremap 0 ^
+nnoremap ^ 0
+vnoremap 0 ^
+vnoremap ^ 0
+" tab
+nnoremap <C-n> gt
+nnoremap <C-p> gT
+" vim-asterisk"
+vnoremap * y/<C-r>0<cr>
+" debug
+map <leader>d <Action>(Debug)
+map <leader>r <Action>(RenameElement)
+map <leader>c <Action>(Stop)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <S-Space> <Action>(GotoNextError)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>o <Action>(FileStructurePopup)
+map gh <Action>(ShowErrorDescription)
+map <C-w><C-o> <Action>(CloseAllEditorsButActive)
+
+" SHIFT+カーソルキーで範囲選択（インサートモード）
+inoremap <S-Left> <C-O>:action EditorLeftWithSelection<CR>
+inoremap <S-Right> <C-O>:action EditorRightWithSelection<CR>
+inoremap <S-Up> <C-O>:action EditorUpWithSelection<CR>
+inoremap <S-Down> <C-O>:action EditorDownWithSelection<CR>
+
+set multiple-cursors
+
+
+""" plugin
+" enabled
+set easymotion
+set NERDTree
+set surround
+set multiple-cursors
+set commentary
+set ReplaceWithRegister
+set argtextobj
+set highlightedyank
+
+" easymotion
+map <leader>f <Plug>(easymotion-s)
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+
+" NERDTree
+nmap <leader>e :NERDTreeFind<cr>
+nmap <leader>E :NERDTreeToggle<cr>
